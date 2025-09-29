@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📸 Anılarımız</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+    /* Mevcut CSS'in tüm renkleri, fontlar ve animasyonlar burada geçerli olacak */
+    :root {
+        --primary-color: #e91e63;
+        --secondary-color: #c2185b;
+        --text-color: #ffcdd2;
+        --bg-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        background: var(--bg-gradient);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2em, 8vw, 3em);
+        margin: 30px 0 20px 0;
+        color: var(--text-color);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .photo-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    .photo-card {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.2);
+        backdrop-filter: blur(5px);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .photo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .photo-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 32px rgba(233,30,99,0.5);
+    }
+
+    .back-btn {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 50px;
+        cursor: pointer;
+        margin: 30px 0;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(233,30,99,0.5);
+    }
+
+    .back-btn:hover {
+        background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(233,30,99,0.6);
+    }
+
+    @media (max-width: 600px) {
+        .photo-card {
+            width: 45%;
+            height: 150px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>📸 Bizim Anılarımız</h1>
+
+<div class="photo-grid">
+    <div class="photo-card">
+        <img src="anilar_1.jpg" alt="Anı 1">
+    </div>
+    <div class="photo-card">
+        <img src="anilar_2.jpg" alt="Anı 2">
+    </div>
+    <div class="photo-card">
+        <img src="anilar_3.jpg" alt="Anı 3">
+    </div>
+    <div class="photo-card">
+        <img src="anilar_4.jpg" alt="Anı 4">
+    </div>
+    <!-- Daha fazla fotoğraf ekleyebilirsin -->
+</div>
+
+<a href="index.html" class="back-btn">Ana Sayfaya Dön</a>
+
+</body>
+</html>
